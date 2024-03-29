@@ -20,3 +20,5 @@ class ApiError extends Error {
 }
 
 export { ApiError }
+
+// refer the document node api error

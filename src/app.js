@@ -13,6 +13,7 @@ app.use(cors({
 }))
 
 // we accepting json format data from client side
+// we use app.use when we want to use middleware or give configuration
 app.use(express.json({ limit: "16kb" }))
 
 // we accepting url data from client side
@@ -30,5 +31,16 @@ app.use(cookieParser())
 // to authenticate user we use middleware
 // example check if user is login or not
 // example check if user is admin or not
+
+// routes import 
+
+import userRouter from './routes/user.routes.js'
+
+
+// routes declaration
+
+app.use("/api/v1/users", userRouter)
+
+// http://localhost:8000/api/v1/users/register
 
 export { app }
